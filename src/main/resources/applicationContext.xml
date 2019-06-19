@@ -12,11 +12,7 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     <!-- 开启SpringMVC注解模式 -->
     <mvc:annotation-driven/>
 
-    <!--处理静态资源-->
-    <mvc:default-servlet-handler/>
-    <mvc:resources location="/js/" mapping="/js/**" />
-    <mvc:resources location="/css/" mapping="/css/**" />
-    <mvc:resources location="/images/" mapping="/images/**" />
+
 
     <!-- 静态资源默认servlet配置 -->
     <mvc:default-servlet-handler/>
