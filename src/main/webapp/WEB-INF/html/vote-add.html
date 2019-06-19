@@ -23,48 +23,25 @@
                 <form class="layui-form">
                     <div class="layui-form-item">
                         <label for="username" class="layui-form-label">
-                            <span class="x-red">*</span>用户名</label>
+                            <span class="x-red">*</span>歌手名</label>
                         <div class="layui-input-inline">
                             <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
                     </div>
                     <div class="layui-form-item">
                         <label for="username" class="layui-form-label">
-                            <span class="x-red">*</span>收货人</label>
+                            <span class="x-red">*</span>歌名</label>
                         <div class="layui-input-inline">
-                            <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
+                            <input type="text" id="songname" name="songname" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
                     </div>
                     <div class="layui-form-item">
-                        <label for="phone" class="layui-form-label">
-                            <span class="x-red">*</span>手机</label>
-                        <div class="layui-input-inline">
-                            <input type="text" id="phone" name="phone" required="" lay-verify="phone" autocomplete="off" class="layui-input"></div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label for="username" class="layui-form-label">
-                            <span class="x-red">*</span>收货地址</label>
-                        <div class="layui-input-inline">
-                            <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label for="username" class="layui-form-label">
-                            <span class="x-red">*</span>配送物流</label>
-                        <div class="layui-input-inline">
-                            <select id="shipping" name="shipping" class="valid">
-                                <option value="shentong">申通物流</option>
-                                <option value="shunfeng">顺丰物流</option></select>
+                        <label class="layui-form-label">
+                            <span class="x-red">*</span>性别</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="sex" value="1" title="男">
+                            <input type="radio" name="sex" value="0" title="女" checked>
                         </div>
                     </div>
-                    <div class="layui-form-item">
-                        <label for="username" class="layui-form-label">
-                            <span class="x-red">*</span>支付方式</label>
-                        <div class="layui-input-inline">
-                            <select name="contrller">
-                                <option>支付方式</option>
-                                <option>支付宝</option>
-                                <option>微信</option>
-                                <option>货到付款</option></select>
-                        </div>
-                    </div>
+
                     <div class="layui-form-item">
                         <label for="L_email" class="layui-form-label">
                             <span class="x-red">*</span>发票抬头</label>
@@ -101,7 +78,7 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label for="L_repass" class="layui-form-label"></label>
+            <label  class="layui-form-label"></label>
             <button class="layui-btn" lay-filter="add" lay-submit="">增加</button></div>
         </form>
         </div>

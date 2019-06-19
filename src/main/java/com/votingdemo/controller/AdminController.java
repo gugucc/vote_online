@@ -32,11 +32,6 @@ public class AdminController {
         return mv;
     }
 
-    @RequestMapping("cate")
-    public ModelAndView cate(){
-        ModelAndView mv=new ModelAndView("/cate");
-        return mv;
-    }
 
     @RequestMapping("error")
     public ModelAndView error(){
@@ -50,11 +45,6 @@ public class AdminController {
         return mv;
     }
 
-    @RequestMapping("member-del")
-    public ModelAndView memberdel(){
-        ModelAndView mv=new ModelAndView("/member-del");
-        return mv;
-    }
 
     @RequestMapping("member-list1")
     public ModelAndView memberlist1(){
@@ -62,23 +52,18 @@ public class AdminController {
         return mv;
     }
 
-    @RequestMapping("order-add")
-    public ModelAndView orderadd(){
-        ModelAndView mv=new ModelAndView("/order-add");
+    @RequestMapping("vote-add")
+    public ModelAndView voteadd(){
+        ModelAndView mv=new ModelAndView("vote-add");
         return mv;
     }
 
-    @RequestMapping("order-list")
-    public ModelAndView orderlist(){
-        ModelAndView mv=new ModelAndView("/order-list");
+    @RequestMapping("vote-list")
+    public ModelAndView votelist(){
+        ModelAndView mv=new ModelAndView("vote-list");
         return mv;
     }
 
-    @RequestMapping("order-list1")
-    public ModelAndView orderlist1(){
-        ModelAndView mv=new ModelAndView("/order-list1");
-        return mv;
-    }
 
     @RequestMapping("welcome1")
     public ModelAndView welcome1(){
@@ -89,6 +74,12 @@ public class AdminController {
     @RequestMapping("echarts4")
     public ModelAndView echarts4(){
         ModelAndView mv=new ModelAndView("/echarts4");
+        return mv;
+    }
+
+    @RequestMapping("singer-add")
+    public ModelAndView singeradd(){
+        ModelAndView mv=new ModelAndView("/singer-add");
         return mv;
     }
 
