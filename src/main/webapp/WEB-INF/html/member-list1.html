@@ -15,6 +15,9 @@
           <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
           <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <script type="text/javascript">
+
+        </script>
     </head>
     
     <body>
@@ -53,7 +56,6 @@
                                         <th lay-data="{field:'project', edit: 'text', minWidth: 100}">作品</th>
                                         <th lay-data="{field:'sex', width:80,templet: '#switchTpl'}">性别</th>
                                         <th lay-data="{field:'image', sort: true, edit: 'text'}">头像</th>
-                                        <th lay-data="{field:'dw_xinzhi',templet: function(d){ return d.dw_xinzhi.titel;}}">学校</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -76,7 +78,8 @@
         <!-- 这里的checked的状态只是演示 -->
         <input type = "checkbox" name = "sex" value = "{{d.id}}" lay-skin = "switch"lay-text = "女|男" lay-filter = "sexDemo" {{ d.id == 10003 ? 'checked':''}} >
     </script>
-    <script>layui.use('laydate',
+    <script>
+        layui.use('laydate',
         function() {
             var laydate = layui.laydate;
 
@@ -91,7 +94,8 @@
             });
 
         });</script>
-    <script>layui.use('table',
+    <script>
+        layui.use('table',
         function() {
             var table = layui.table;
 

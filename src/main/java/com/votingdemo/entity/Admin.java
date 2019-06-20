@@ -1,6 +1,6 @@
 package com.votingdemo.entity;
 
-public class admin {
+public class Admin {
     private int id;
     private String username;
     private String password;

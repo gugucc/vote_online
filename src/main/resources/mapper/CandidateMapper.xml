@@ -2,7 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.votingdemo.dao.CandidateDao">
-    <insert id="add_candidate">
-        insert into candidate() username=#{username} and password=#{password}
+    <insert id="addCandidate" parameterType="com.votingdemo.entity.Candidate">
+        insert into candidate(username,project,sex) value (#{username},#{project},#{sex})
     </insert>
+    <select id="getCandidate" parameterType="com.votingdemo.entity.Candidate">
+        select c_id,username,project,sex from candidate
+    </select>
 </mapper>

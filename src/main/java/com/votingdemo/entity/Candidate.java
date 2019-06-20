@@ -1,6 +1,6 @@
 package com.votingdemo.entity;
 
-public class candidate {
+public class Candidate {
     private String username;
     private String project;
     private String sex;

@@ -1,7 +1,7 @@
 package com.votingdemo.dao;
 
-import com.votingdemo.entity.admin;
+import com.votingdemo.entity.Admin;
 
 public interface AdminDao {
-    admin findadmin(String username);
+    Admin findadmin(String username);
 }

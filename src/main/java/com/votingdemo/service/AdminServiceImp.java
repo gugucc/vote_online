@@ -1,12 +1,12 @@
 package com.votingdemo.service;
 
-import com.votingdemo.entity.admin;
+import com.votingdemo.entity.Admin;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AdminServiceImp implements AdminService {
     @Override
-    public admin findadmin(String username) {
+    public Admin findadmin(String username) {
         return null;
     }
 }

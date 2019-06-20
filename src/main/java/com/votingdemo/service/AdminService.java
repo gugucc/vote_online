@@ -1,8 +1,8 @@
 package com.votingdemo.service;
 
-import com.votingdemo.entity.admin;
+import com.votingdemo.entity.Admin;
 
 public interface AdminService  {
-    admin findadmin(String username);
+    Admin findadmin(String username);
 
 }
