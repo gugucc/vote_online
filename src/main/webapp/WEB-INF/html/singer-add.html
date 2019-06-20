@@ -21,6 +21,16 @@
 <body>
 <div class="layui-fluid">
     <div class="layui-row">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+            <legend>歌手头像上传</legend>
+        </fieldset>
+        <div class="layui-upload">
+            <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
+            <button type="button" class="layui-btn" id="test9">开始上传</button>
+        </div>
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+            <legend>歌手基本信息</legend>
+        </fieldset>
         <form class="layui-form">
             <div class="layui-form-item">
                 <label for="username" class="layui-form-label">
@@ -38,20 +48,14 @@
                 <label class="layui-form-label">
                     <span class="x-red">*</span>性别</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="sex" value="男" title="男">
-                    <input type="radio" name="sex" value="女" title="女" checked>
+                    <input type="radio" name="sex" value="1" title="男">
+                    <input type="radio" name="sex" value="0" title="女" checked>
                 </div>
             </div>
 
-            <div class="layui-form-item">
-                <label class="layui-form-label"></label>
-                <button type="button" class="layui-btn" id="test1">
-                    <i class="layui-icon">&#xe67c;</i>上传图片
-                </button>
-            </div>
 
             <div class="layui-form-item">
-                <label class="layui-form-label"></label>
+                <label for="L_repass" class="layui-form-label"></label>
                 <button class="layui-btn" lay-filter="add" lay-submit="">增加</button></div>
         </form>
     </div>
