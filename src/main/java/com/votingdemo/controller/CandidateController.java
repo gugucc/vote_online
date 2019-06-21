@@ -1,5 +1,6 @@
 package com.votingdemo.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.votingdemo.entity.Candidate;
 import com.votingdemo.entity.ResultMsg;
 import com.votingdemo.service.CandidateService;
@@ -32,8 +33,15 @@ public class CandidateController {
     public Object list(){
         // 找到预备选手
         List<Candidate> candidate = candidateService.getCandidate();
+        //String s = JSON.toJSONString(candidate);
+        JSONObject obj=new JSONObject();
+        //前台通过key值获得对应的value值
+        obj.put("code", 0);
+        obj.put("msg", "");
+        obj.put("count",1000);
+        obj.put("data",candidate);
+        return obj.toJSONString();
 
-        return candidate;
     }
 
 }

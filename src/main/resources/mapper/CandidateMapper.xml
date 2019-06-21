@@ -2,13 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.votingdemo.dao.CandidateDao">
+    <resultMap id="candidate" type="com.votingdemo.entity.Candidate">
+        <id property="c_id" column="c_id"/>
+        <result property="username" column="username"/>
+        <result property="project" column="project"/>
+        <result property="sex" column="sex"/>
+    </resultMap>
     <insert id="addCandidate" parameterType="com.votingdemo.entity.Candidate">
         insert into candidate(username,project,sex) value (#{username},#{project},#{sex})
     </insert>
     <update id="uploadImages" parameterType="com.votingdemo.entity.Candidate">
         update candidate set image=#{image} where username=#{username}
     </update>
-    <select id="getCandidate" parameterType="com.votingdemo.entity.Candidate">
+    <select id="getCandidate" resultMap="candidate">
         select c_id,username,project,sex from candidate
     </select>
 </mapper>

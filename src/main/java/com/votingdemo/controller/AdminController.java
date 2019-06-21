@@ -39,11 +39,7 @@ public class AdminController {
         return mv;
     }
 
-    @RequestMapping("login")
-    public ModelAndView login(){
-        ModelAndView mv=new ModelAndView("/login");
-        return mv;
-    }
+
 
 
     @RequestMapping("member-list1")
@@ -82,5 +78,9 @@ public class AdminController {
         ModelAndView mv=new ModelAndView("/singer-add");
         return mv;
     }
+    @RequestMapping("login")
+    public ModelAndView login(){
 
+        return    new ModelAndView("/login");
+    }
 }
