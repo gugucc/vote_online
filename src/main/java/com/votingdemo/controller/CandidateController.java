@@ -27,14 +27,13 @@ public class CandidateController {
         return new ResultMsg(1,"新增成功");
     }
 
-    @RequestMapping(value="/find_Candidate",method= RequestMethod.POST)
+    @RequestMapping(value="/find_Candidate",method= RequestMethod.GET)
     @ResponseBody
-    public ModelAndView list(){
+    public Object list(){
         // 找到预备选手
         List<Candidate> candidate = candidateService.getCandidate();
-        ModelAndView mv=new ModelAndView("/member-list1");
-        mv.addObject("candidate", candidate);
-        return mv;
+
+        return candidate;
     }
 
 }

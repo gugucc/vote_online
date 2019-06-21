@@ -4,7 +4,7 @@ public class Candidate {
     private String username;
     private String project;
     private String sex;
-    private String images;
+    private String image;
 
     public String getUsername() {
         return username;
@@ -30,11 +30,11 @@ public class Candidate {
         this.sex = sex;
     }
 
-    public String getImages() {
-        return images;
+    public String getImage() {
+        return image;
     }
 
-    public void setImages(String images) {
-        this.images = images;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

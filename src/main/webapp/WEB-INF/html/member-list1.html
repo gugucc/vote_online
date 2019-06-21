@@ -47,17 +47,12 @@
                             </form>
                         </div>
                         <div class="layui-card-body ">
-                            <table class="layui-table" lay-data="{url:'./user.json',page:true,toolbar: '#toolbarDemo',id:'test'}" lay-filter="test">
-                                <thead>
-                                    <tr>
-                                        <th lay-data="{type:'checkbox'}">ID</th>
-                                        <th lay-data="{field:'id', width:80, sort: true}">ID</th>
-                                        <th lay-data="{field:'username', width:120, sort: true, edit: 'text'}">用户名</th>
-                                        <th lay-data="{field:'project', edit: 'text', minWidth: 100}">作品</th>
-                                        <th lay-data="{field:'sex', width:80,templet: '#switchTpl'}">性别</th>
-                                        <th lay-data="{field:'image', sort: true, edit: 'text'}">头像</th>
-                                    </tr>
-                                </thead>
+                            <div class = "layui-btn-container" >
+                                <button class="layui-btn" onclick="xadmin.open('添加歌手','./singer-add.html',800,600)">
+                                    <i class="layui-icon"></i>添加歌手</button>
+                            </div>
+                            <table class="layui-table" id="test" lay-filter="test">
+
                             </table>
                         </div>
                     </div>
@@ -65,19 +60,7 @@
             </div>
         </div>
     </body>
-    <script type="text/html" id="toolbarDemo">
-        <div class = "layui-btn-container" > 
-            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" > 获取选中行数据 </button>
-            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button > 
-            <button class = "layui-btn layui-btn-sm" lay-event = "isAll" > 验证是否全选</button>
-            <button class="layui-btn" onclick="xadmin.open('添加歌手','./singer-add.html',800,600)">
-                <i class="layui-icon"></i>添加歌手</button></div>
-        </div > 
-    </script>
-    <script type="text/html" id="switchTpl">
-        <!-- 这里的checked的状态只是演示 -->
-        <input type = "checkbox" name = "sex" value = "{{d.id}}" lay-skin = "switch"lay-text = "女|男" lay-filter = "sexDemo" {{ d.id == 10003 ? 'checked':''}} >
-    </script>
+
     <script>
         layui.use('laydate',
         function() {
@@ -129,11 +112,52 @@
                 };
             });
         });</script>
-    <script>var _hmt = _hmt || []; (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();</script>
 
+    <script type="text/javascript">
+        layui.use('table', function() {
+            var table = layui.table;
+
+            table.render({
+                elem: '#test',
+                url: 'find_Candidate',
+                title: '用户数据表',
+                cols:  [
+                    [{
+                        field: 'c_id',
+                        width: 80,
+                        title: 'ID',
+                        sort: true
+                    },
+                        {
+                            field: 'username',
+                            width: 120,
+                            title: '用户名'
+                        },
+                        {
+                            field: 'sex',
+                            width: 80,
+                            title: '性别',
+                            sort: true
+                        },
+                        {
+                            field: 'project',
+                            width: 120,
+                            title: '作品'
+                        }
+                    ]
+                ],
+                page: true,
+                response: {
+                    statusName:'code', //规定返回的状态码字段为code
+                },
+                parseData: function(res) { //将原始数据解析成 table 组件所规定的数据
+                    return {
+                        "code": res.code, //解析接口状态
+                        "msg": res.msg, //解析提示文本
+                        "data": res.data //解析数据列表
+                    };
+                }
+            });
+        });
+    </script>
 </html>

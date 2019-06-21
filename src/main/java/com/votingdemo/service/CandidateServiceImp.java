@@ -2,6 +2,7 @@ package com.votingdemo.service;
 
 import com.votingdemo.dao.CandidateDao;
 import com.votingdemo.entity.Candidate;
+import com.votingdemo.entity.Product;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,6 +16,11 @@ public class CandidateServiceImp implements CandidateService {
     @Override
     public void addCandidate(Candidate candidate) {
         candidateDao.addCandidate(candidate);
+    }
+
+    @Override
+    public void uploadImages(Candidate candidate) {
+        candidateDao.uploadImages(candidate);
     }
 
     @Override

@@ -2,25 +2,21 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="vote_online:war" />
+      <artifact name="vote_online:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0eb7ec90-c003-40ef-86cf-dfa640c14334" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/controller/CandidateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/ResultMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/user.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-3.1.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/controller/UploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/votingdemo/dao/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/dao/AdminDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/votingdemo/controller/CandidateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/controller/CandidateController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/votingdemo/dao/CandidateDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/dao/CandidateDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Candidate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/votingdemo/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/votingdemo/service/AdminServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/service/AdminServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Candidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Candidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CandidateMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CandidateMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/member-list1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/member-list1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/singer-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/singer-add.html" afterDir="false" />
@@ -41,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/singer-add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1493">
-              <caret line="103" column="45" selection-start-line="103" selection-start-column="45" selection-end-line="103" selection-end-column="45" />
+            <state relative-caret-position="1785">
+              <caret line="85" column="52" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="52" />
               <folding>
                 <element signature="n#style#0;n#fieldset#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#fieldset#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -52,24 +48,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateServiceImp.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Candidate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+            <state relative-caret-position="63">
+              <caret line="3" column="27" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#520#521#0" expanded="true" />
-                <element signature="e#570#571#0" expanded="true" />
+                <element signature="e#620#621#0" expanded="true" />
+                <element signature="e#648#649#0" expanded="true" />
+                <element signature="e#690#691#0" expanded="true" />
+                <element signature="e#724#725#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -77,17 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/member-list1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="98" column="20" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CandidateMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+            <state relative-caret-position="639">
+              <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -95,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/controller/CandidateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
+            <state relative-caret-position="317">
+              <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,10 +84,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1453">
+              <caret line="153" column="30" lean-forward="true" selection-start-line="153" selection-start-column="30" selection-end-line="153" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/dao/CandidateDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="35" />
+            <state relative-caret-position="189">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/service/AdminServiceImp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,7 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/AdminMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/admin.java" />
@@ -154,7 +153,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/order-list1.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/welcome.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/welcome1.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mybatis.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/cate.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/order-add.html" />
@@ -165,17 +163,22 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/login.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin-list.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin-add.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/vote-add.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/candidate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/ResultMsg.java" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/singer-add.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/vote-add.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/dao/CandidateDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateServiceImp.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CandidateMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/controller/CandidateController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Candidate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/controller/UploadController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/singer-add.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/member-list1.html" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/votingdemo/controller/CandidateController.java" />
       </list>
     </option>
   </component>
@@ -212,8 +215,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -311,14 +314,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vote_online" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vote_online" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -329,6 +324,17 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vote_online" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vote_online" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vote_online" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vote_online" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="ssm" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -375,12 +381,13 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.19" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.19" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/vote_online_war_exploded/" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="vote_online:war">
+        <artifact name="vote_online:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/vote_online_war" />
+            <option name="CONTEXT_PATH" value="/vote_online_war_exploded" />
           </settings>
         </artifact>
       </deployment>
@@ -443,7 +450,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="vote_online:war" />
+          <artifact name="vote_online:war exploded" />
         </option>
       </method>
     </configuration>
@@ -528,7 +535,8 @@
       <workItem from="1560903979676" duration="11923000" />
       <workItem from="1560927085295" duration="596000" />
       <workItem from="1560990418733" duration="12830000" />
-      <workItem from="1561006982260" duration="840000" />
+      <workItem from="1561006982260" duration="31182000" />
+      <workItem from="1561076864667" duration="312000" />
     </task>
     <task id="LOCAL-00001" summary="单周实训项目">
       <created>1560819791784</created>
@@ -586,17 +594,31 @@
       <option name="project" value="LOCAL" />
       <updated>1560995404409</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="单周实训项目">
+      <created>1561007990552</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1561007990553</updated>
+    </task>
+    <task id="LOCAL-00010" summary="单周实训项目">
+      <created>1561008670022</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1561008670022</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46128000" />
+    <option name="totallyTimeSpent" value="76782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26675603" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27010724" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -606,7 +628,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.19830029" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.26770538" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -614,7 +636,7 @@
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067025" side_tool="true" weight="0.36260623" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013405" side_tool="true" weight="0.1388102" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3286119" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" sideWeight="0.49932975" weight="0.1756374" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
@@ -642,18 +664,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="单周实训项目" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="224" column="10" selection-start-line="224" selection-start-column="10" selection-end-line="224" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/bootstrap/js/npm.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/entity/User.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/dao/UserDao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/dao/AdminDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -665,18 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/service/AdminServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-            <element signature="e#210#211#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -724,20 +722,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vote_online.iml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -826,13 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/user.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -844,98 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-378">
           <caret line="48" column="85" lean-forward="true" selection-start-line="48" selection-start-column="85" selection-end-line="48" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Candidate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="e#198#199#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-            <element signature="e#317#318#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#695#696#0" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/dao/CandidateDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/controller/CandidateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CandidateMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/vote-add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="123" column="44" selection-start-line="123" selection-start-column="44" selection-end-line="123" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/singer-add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1493">
-          <caret line="103" column="45" selection-start-line="103" selection-start-column="45" selection-end-line="103" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#fieldset#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -951,10 +836,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/user.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/vote-add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/ssm/upload/15610170984328a91c830a241928cb994d1b1425284bc.jpg" />
+    <entry file="file://$PROJECT_DIR$/target/ssm/upload/1561023218667-7bcc27673163c2cc.jpg" />
+    <entry file="file://$PROJECT_DIR$/target/ssm/upload/1561016939145aa2e07e0ly1g25db3so2oj20c80bxjrt.jpg" />
+    <entry file="file://$PROJECT_DIR$/target/ssm/upload/1561022667699d1a20cf431adcbefec7d84fca6af2edda2cc9ffb.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="e#162#163#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="true" />
+            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#322#323#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/service/CandidateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CandidateMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/controller/UploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="35" column="80" lean-forward="true" selection-start-line="35" selection-start-column="80" selection-end-line="35" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/singer-add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="85" column="52" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="52" />
+          <folding>
+            <element signature="n#style#0;n#fieldset#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#fieldset#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/entity/Candidate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="27" />
+          <folding>
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#277#278#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#381#382#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/dao/CandidateDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/service/AdminServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1453">
+          <caret line="153" column="30" lean-forward="true" selection-start-line="153" selection-start-column="30" selection-end-line="153" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/votingdemo/controller/CandidateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/member-list1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="98" column="20" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+        <state relative-caret-position="639">
+          <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
         </state>
       </provider>
     </entry>

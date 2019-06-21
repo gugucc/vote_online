@@ -5,6 +5,9 @@
     <insert id="addCandidate" parameterType="com.votingdemo.entity.Candidate">
         insert into candidate(username,project,sex) value (#{username},#{project},#{sex})
     </insert>
+    <update id="uploadImages" parameterType="com.votingdemo.entity.Candidate">
+        update candidate set image=#{image} where username=#{username}
+    </update>
     <select id="getCandidate" parameterType="com.votingdemo.entity.Candidate">
         select c_id,username,project,sex from candidate
     </select>
