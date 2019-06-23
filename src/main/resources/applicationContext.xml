@@ -18,8 +18,8 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     <mvc:default-servlet-handler/>
     <!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀   如：http://127.0.0.1:8080/springmvc/jsp/****.jsp-->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/html/"/>   <!--前缀 -->
-        <property name="suffix" value=".html"/>     <!-- 后缀-->
+        <property name="prefix" value="/WEB-INF/jsp/"/>   <!--前缀 -->
+        <property name="suffix" value=".jsp"/>     <!-- 后缀-->
     </bean>
 
     <!-- 配置 MultipartResolver -->

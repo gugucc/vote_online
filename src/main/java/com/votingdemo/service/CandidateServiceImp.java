@@ -2,7 +2,6 @@ package com.votingdemo.service;
 
 import com.votingdemo.dao.CandidateDao;
 import com.votingdemo.entity.Candidate;
-import com.votingdemo.entity.Product;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

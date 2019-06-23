@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="vote_online" />
         <module name="vote_online3" />
+        <module name="vote_online" />
       </profile>
     </annotationProcessing>
   </component>

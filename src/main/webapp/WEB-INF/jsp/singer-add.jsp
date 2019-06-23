@@ -1,17 +1,25 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: asus
+  Date: 2019/6/21
+  Time: 11:57
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html class="x-admin-sm">
-
 <head>
     <meta charset="UTF-8">
     <title>欢迎页面-X-admin2.2</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/xadmin.css">
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="lib/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/xadmin.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/xadmin.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/xadmin.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -26,18 +34,18 @@
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
             <legend>上传歌手头像</legend>
         </fieldset>
-        <form class="layui-form">
-        <div class="layui-upload">
-            <button type="button" class="layui-btn layui-btn-normal" id="chose">选择文件</button>
-            <div class="layui-form-item">
-                <label for="username" class="layui-form-label">
-                    <span class="x-red">*</span>歌手名</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="name" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input">
+        <form enctype="multipart/form-data" class="layui-form" action="${pageContext.request.contextPath}/upload_submit" method="post">
+            <div class="layui-upload">
+                <button type="button" class="layui-btn layui-btn-normal" id="chose">选择文件</button>
+                <div class="layui-form-item">
+                    <label for="username" class="layui-form-label">
+                        <span class="x-red">*</span>歌手名</label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="name" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input">
+                    </div>
                 </div>
+                <button type="submit" lay-filter="submit" class="layui-btn" id="upload">开始上传</button>
             </div>
-            <button type="button" lay-filter="submit" class="layui-btn" id="upload">开始上传</button>
-        </div>
         </form>
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
             <legend>添加基本信息</legend>
@@ -71,7 +79,7 @@
         </form>
     </div>
 </div>
-<script type="text/javascript">
+<%--<script type="text/javascript">
     layui.use(['form', 'layer'],
         function() {
             $ = layui.jquery;
@@ -101,7 +109,7 @@
 
 
         });
-</script>
+</script>--%>
 <script>
     layui.use('upload', function() {
         var $ = layui.jquery,
@@ -114,14 +122,8 @@
             auto: false,
             multiple: true,
             bindAction: '#upload',
-            done: function(res) {
-                console.log(res)
-                if (res.code ==200) {
-                    layer.msg('添加成功')
-                }else {
-                    layer.msg('添加失败')
-                }
-
+            success:function(){
+                layer.msg('添加成功')
             },
         });
     });
@@ -170,5 +172,4 @@
     })();
 </script>
 </body>
-
 </html>

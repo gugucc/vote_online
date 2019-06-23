@@ -1,7 +1,6 @@
 package com.votingdemo.service;
 
 import com.votingdemo.entity.Candidate;
-import com.votingdemo.entity.Product;
 
 import java.util.List;
 
