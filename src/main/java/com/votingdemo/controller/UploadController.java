@@ -25,7 +25,7 @@ public class UploadController {
     //接受表单提交请求
     @RequestMapping(value="/upload_submit")
     @ResponseBody
-    public Map<String,Object> upload_submit(@RequestParam("file") MultipartFile file, HttpServletRequest request, Candidate candidate,String username) {
+    public Map<String,Object> upload_submit(@RequestParam("file") MultipartFile file, HttpServletRequest request, Candidate candidate) {
         Assert.notNull(file, "上传文件不能为空");
         String filepath = request.getServletContext().getRealPath("/");
         String filename = System.currentTimeMillis()+file.getOriginalFilename();
@@ -36,7 +36,7 @@ public class UploadController {
         }
         String savepath = filepath+"/upload/"+filename;
         System.out.println("轮播图保存路径:"+savepath);
-        System.out.println(username);
+        /*System.out.println(username);*/
 
         //保存到数据库
         candidate.setImage(savepath);
@@ -48,8 +48,8 @@ public class UploadController {
             file.transferTo(new File(savepath));
 
             //返回json
-            /*map.put("msg","ok");
-            map.put("code",200);*/
+            map.put("msg","ok");
+            map.put("code",200);
             /*加不加这个都行
             map.put("data",new HashMap<String,Object>(){
                 {

@@ -61,8 +61,9 @@
                 <div class="layui-card-header">
                     <button class="layui-btn layui-btn-danger" onclick="delAll()">
                         <i class="layui-icon"></i>批量删除</button>
-                    <button class="layui-btn" onclick="xadmin.open('添加新的投票','./vote-add.html',800,600)">
-                        <i class="layui-icon"></i>添加新的投票</button></div>
+                    <button class="layui-btn" onclick="xadmin.open('添加对决主题','./duel-add',800,600)">
+                        <i class="layui-icon"></i>添加对决主题</button>
+                </div>
                 <div class="layui-card-body ">
                     <table class="layui-table layui-form">
                         <thead>
@@ -71,10 +72,8 @@
                                 <input type="checkbox" name="" lay-skin="primary">
                             </th>
                             <th>投票编号</th>
-                            <th>选手一</th>
-                            <th>票数</th>
-                            <th>选手二</th>
-                            <th>票数</th>
+                            <th>对决主题</th>
+                            <th>开始时间</th>
                             <th>投票状态</th>
                             <th>操作</th></tr>
                         </thead>
@@ -83,16 +82,14 @@
                             <td>
                                 <input type="checkbox" name="" lay-skin="primary"></td>
                             <td>01</td>
-                            <td>老王</td>
-                            <td>7829</td>
-                            <td>张三</td>
-                            <td>7829</td>
+                            <td>中国好声音</td>
+                            <th>开始时间</th>
                             <td>
                                 <input type="checkbox" name="switch"  lay-text="开启|停用"  checked="" lay-skin="switch">
                             </td>
                             <td class="td-manage">
-                                <button class="layui-btn layui-btn layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>编辑</button>
-                                <button class="layui-btn layui-btn-warm layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>添加子栏目</button>
+                                <button class="layui-btn layui-btn layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>添加比赛歌手</button>
+                                <button class="layui-btn layui-btn-warm layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>查看详情</button>
                                 <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="member_del(this,'要删除的id')" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button>
                             </td>
                         </tr>
@@ -100,16 +97,14 @@
                             <td>
                                 <input type="checkbox" name="" lay-skin="primary"></td>
                             <td>02</td>
-                            <td>老王</td>
-                            <td>7829</td>
-                            <td>张三</td>
-                            <td>7829</td>
+                            <td>想唱就唱</td>
+                            <th>开始时间</th>
                             <td>
                                 <input type="checkbox" name="switch"  lay-text="开启|停用"  checked="" lay-skin="switch">
                             </td>
                             <td class="td-manage">
-                                <button class="layui-btn layui-btn layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>编辑</button>
-                                <button class="layui-btn layui-btn-warm layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>添加子栏目</button>
+                                <button class="layui-btn layui-btn layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>添加比赛歌手</button>
+                                <button class="layui-btn layui-btn-warm layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>查看详情</button>
                                 <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="member_del(this,'要删除的id')" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button>
                             </td>
                         </tr>
@@ -117,16 +112,14 @@
                             <td>
                                 <input type="checkbox" name="" lay-skin="primary"></td>
                             <td>03</td>
-                            <td>老王</td>
-                            <td>7829</td>
-                            <td>张三</td>
-                            <td>7829</td>
+                            <td>重工好声音</td>
+                            <th>开始时间</th>
                             <td>
                                 <input type="checkbox" name="switch"  lay-text="开启|停用"  checked="" lay-skin="switch">
                             </td>
                             <td class="td-manage">
-                                <button class="layui-btn layui-btn layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>编辑</button>
-                                <button class="layui-btn layui-btn-warm layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>添加子栏目</button>
+                                <button class="layui-btn layui-btn layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>添加比赛歌手</button>
+                                <button class="layui-btn layui-btn-warm layui-btn-xs"  onclick="xadmin.open('编辑','admin-edit.html')" ><i class="layui-icon">&#xe642;</i>查看详情</button>
                                 <button class="layui-btn-danger layui-btn layui-btn-xs"  onclick="member_del(this,'要删除的id')" href="javascript:;" ><i class="layui-icon">&#xe640;</i>删除</button>
                             </td>
                         </tr>

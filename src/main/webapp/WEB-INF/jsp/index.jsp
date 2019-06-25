@@ -15,7 +15,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/xadmin.css">
     <!-- <link rel="stylesheet" href="./css/theme5.css"> -->
@@ -93,7 +92,7 @@
                 <ul class="sub-menu">
 
                     <li>
-                        <a onclick="xadmin.add_tab('参赛歌手列表(动态表格)','member-list1.html',true)">
+                        <a onclick="xadmin.add_tab('参赛歌手列表(动态表格)','member-list1',true)">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>参赛歌手列表(动态表格)</cite></a>
                     </li>
@@ -123,7 +122,7 @@
                     <i class="iconfont nav_right">&#xe697;</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a onclick="xadmin.add_tab('管理员列表','admin-list.html')">
+                        <a onclick="xadmin.add_tab('管理员列表','admin-list')">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>管理员列表</cite></a>
                     </li>
@@ -137,12 +136,12 @@
                 <ul class="sub-menu">
 
                     <li>
-                        <a onclick="xadmin.add_tab('饼图','echarts4.html')">
+                        <a onclick="xadmin.add_tab('饼图','echarts4')">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>饼图</cite></a>
                     </li>
                     <li>
-                        <a onclick="xadmin.add_tab('统计页面','welcome1.html')">
+                        <a onclick="xadmin.add_tab('统计页面','welcome1')">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>统计页面</cite></a>
                     </li>

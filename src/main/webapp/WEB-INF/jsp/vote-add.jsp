@@ -15,134 +15,152 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>投票添加</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/xadmin.css">
+    <script src="${pageContext.request.contextPath}/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-<div class="layui-container" style="margin-top: 15px;">
-    <div class="layui-btn-group">
-        <button class="layui-btn all">获取全部数据</button>
-        <button class="layui-btn left">获取左边数据</button>
-        <button class="layui-btn right">获取右边数据</button>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body ">
+                    <form class="layui-form layui-col-space5">
+                        <div class="layui-inline layui-show-xs-block">
+                            <input type="text" name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input"></div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                                <i class="layui-icon">&#xe615;</i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="layui-card-body ">
+                    <table class="layui-table" id="test" lay-filter="test">
+                        <thead>
+                        <tr>
+
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="root"></div>
-    <div id="root1"></div>
 </div>
 </body>
-<script type="text/javascript" src="${pageContext.request.contextPath}/lib/layui/layui.js"></script>
 <script>
-    layui.config({
-        base: 'lib/layui_exts/transfer/'
-    }).use(['transfer'], function() {
-        var transfer = layui.transfer,
-            $ = layui.$;
-        //数据源
-        var data1 = [{
-            'id': '10001',
-            'name': '杜甫',
-            'project': '爱我别走'
-        }, {
-            'id': '10002',
-            'name': '李白',
-            'project': '爱我别走'
-        }, {
-            'id': '10003',
-            'name': '王勃',
-            'project': '爱我别走'
-        }, {
-            'id': '10004',
-            'name': '李清照',
-            'project': '爱我别走'
-        }];
-        var data2 = [{
-            'id': '10005',
-            'name': '白居易',
-            'project': '爱我别走'
-        },
-            {
-                'id': '10006',
-                'name': '白居易',
-                'project': '爱我别走'
-            },
-            {
-                'id': '10007',
-                'name': '白居易',
-                'project': '爱我别走'
-            },
-            {
-                'id': '10008',
-                'name': '白居易',
-                'project': '爱我别走'
-            },
-            {
-                'id': '10009',
-                'name': '白居易',
-                'project': '爱我别走'
-            },
-            {
-                'id': '100010',
-                'name': '白居易',
-                'project': '爱我别走'
-            },
-            {
-                'id': '100011',
-                'name': '白居易',
-                'project': '爱我别走'
-            },
-        ];
-        //表格列
-        var cols = [{
-            type: 'checkbox',
-            fixed: 'left'
-        }, {
-            field: 'id',
-            title: 'ID',
-            width: 80,
-            sort: true
-        }, {
-            field: 'name',
-            title: '用户名'
-        }, {
-            field: 'project',
-            title: '作品'
-        }]
-        //表格配置文件
-        var tabConfig = {
-            'page': true,
-            'limit': 10,
-            'height': 400
-        }
+    layui.use('laydate',
+        function() {
+            var laydate = layui.laydate;
 
-        var tb1 = transfer.render({
-            elem: "#root", //指定元素
-            cols: cols, //表格列  支持layui数据表格所有配置
-            data: [data1, data2], //[左表数据,右表数据[非必填]]
-            tabConfig: tabConfig //表格配置项 支持layui数据表格所有配置
-        })
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#start' //指定元素
+            });
 
-        //transfer.get(参数1:初始化返回值,参数2:获取数据[all,left,right,l,r],参数:指定数据字段)
-        //获取数据
-        $('.all').on('click', function() {
-            var data = transfer.get(tb1, 'all');
-            layer.msg(JSON.stringify(data))
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#end' //指定元素
+            });
+
+        });</script>
+<script>
+    layui.use('table',
+        function() {
+            var table = layui.table;
+
+            //监听单元格编辑
+            table.on('edit(test)',
+                function(obj) {
+                    var value = obj.value //得到修改后的值
+                        ,
+                        data = obj.data //得到所在行所有键值
+                        ,
+                        field = obj.field; //得到字段
+                    layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
+                });
+
+            //头工具栏事件
+            table.on('toolbar(test)',
+                function(obj) {
+                    var checkStatus = table.checkStatus(obj.config.id);
+                    switch (obj.event) {
+                        case 'getCheckData':
+                            var data = checkStatus.data;
+                            layer.alert(JSON.stringify(data));
+                            break;
+                        case 'getCheckLength':
+                            var data = checkStatus.data;
+                            layer.msg('选中了：' + data.length + ' 个');
+                            break;
+                        case 'isAll':
+                            layer.msg(checkStatus.isAll ? '全选': '未全选');
+                            break;
+                    };
+                });
         });
-        $('.left').on('click', function() {
-            var data = transfer.get(tb1, 'left', 'id');
-            layer.msg(JSON.stringify(data))
-        });
-        $('.right').on('click', function() {
-            var data = transfer.get(tb1, 'r');
-            layer.msg(JSON.stringify(data))
-        });
-    })
+
+
+
 </script>
-<script>
-    //以下百度统计代码与组件代码无关 请勿使用
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?74fccec1ffa027e00b82ec47a5b9f8f5";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
+
+<script type="text/javascript">
+    layui.use('table', function() {
+        var table = layui.table;
+
+        table.render({
+            elem: '#test',
+            url: 'find_Candidate',
+            title: '用户数据表',
+            cols:  [[
+                {type: 'checkbox', fixed: 'left'},
+                {
+                    field: 'c_id',
+                    width: 80,
+                    title: 'ID',
+                    sort: true,
+                    edit: 'text'
+                },
+                {
+                    field: 'username',
+                    width: 150,
+                    title: '用户名',
+                    edit: 'text'
+                },
+                {
+                    field: 'sex',
+                    width: 80,
+                    title: '性别',
+                    sort: true,
+                    edit: 'text'
+                },
+                {
+                    field: 'project',
+                    width: 150,
+                    title: '作品',
+                    edit: 'text'
+                }
+            ]
+            ],
+            page: true,
+            response: {
+                statusName:'code', //规定返回的状态码字段为code
+            },
+            parseData: function(res) { //将原始数据解析成 table 组件所规定的数据
+                return {
+                    "code": res.code, //解析接口状态
+                    "msg": res.msg, //解析提示文本
+                    "data": res.data //解析数据列表
+                };
+            }
+        });
+
+    });
 </script>
 </html>

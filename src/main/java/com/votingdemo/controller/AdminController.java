@@ -109,4 +109,10 @@ public class AdminController {
         return mv;
     }
 
+    @RequestMapping("duel-add")
+    public ModelAndView duel_add(){
+        ModelAndView mv=new ModelAndView("/duel-add");
+        return mv;
+    }
+
 }

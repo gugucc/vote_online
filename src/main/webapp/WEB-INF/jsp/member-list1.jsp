@@ -143,27 +143,31 @@
                 {type: 'checkbox', fixed: 'left'},
                 {
                     field: 'c_id',
-                    width: 80,
+                    width: 100,
                     title: 'ID',
-                    sort: true
+                    sort: true,
+                    edit: 'text'
                 },
                     {
                         field: 'username',
-                        width: 120,
-                        title: '用户名'
+                        width: 250,
+                        title: '用户名',
+                        edit: 'text'
                     },
                     {
                         field: 'sex',
-                        width: 80,
+                        width: 100,
                         title: '性别',
-                        sort: true
+                        sort: true,
+                        edit: 'text'
                     },
                     {
                         field: 'project',
-                        width: 150,
-                        title: '作品'
+                        width: 250,
+                        title: '作品',
+                        edit: 'text'
                     },
-                {fixed: 'right', title:'操作', toolbar: '#barDemo', width:150}
+                {fixed: 'right', title:'操作', toolbar: '#barDemo', width:250}
                 ]
             ],
             page: true,

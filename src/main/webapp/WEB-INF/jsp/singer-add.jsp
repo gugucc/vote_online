@@ -34,7 +34,7 @@
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
             <legend>上传歌手头像</legend>
         </fieldset>
-        <form enctype="multipart/form-data" class="layui-form" action="${pageContext.request.contextPath}/upload_submit" method="post">
+        <form <%--enctype="multipart/form-data"--%> class="layui-form" <%--action="${pageContext.request.contextPath}/upload_submit" method="post"--%>>
             <div class="layui-upload">
                 <button type="button" class="layui-btn layui-btn-normal" id="chose">选择文件</button>
                 <div class="layui-form-item">
@@ -44,7 +44,7 @@
                         <input type="text" id="name" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <button type="submit" lay-filter="submit" class="layui-btn" id="upload">开始上传</button>
+                <button type="button" lay-filter="submit" class="layui-btn" id="upload">开始上传</button>
             </div>
         </form>
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
@@ -58,7 +58,7 @@
                     <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
             </div>
             <div class="layui-form-item">
-                <label for="username" class="layui-form-label">
+                <label for="songName" class="layui-form-label">
                     <span class="x-red">*</span>歌名</label>
                 <div class="layui-input-inline">
                     <input type="text" id="songName" name="songName" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
@@ -122,9 +122,18 @@
             auto: false,
             multiple: true,
             bindAction: '#upload',
-            success:function(){
-                layer.msg('添加成功')
+            before:function(obj){
+                this.data={username:$('#name').val()}
             },
+            done: function(res){
+                if(res.code==200){
+                    layer.msg('上传成功！');
+                }
+                else{
+                    layer.msg("上传失败！");
+
+                }
+            }
         });
     });
 </script>
