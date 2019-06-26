@@ -44,4 +44,15 @@ public class CandidateController {
 
     }
 
+
+
+    @RequestMapping("/del")
+    @ResponseBody
+    public int del(int c_id){
+        //删除雇员
+        int i=candidateService.delSinger(c_id);
+        System.out.println("======"+c_id);
+        return i;
+    }
+
 }

@@ -12,50 +12,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.registry.infomodel.User;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
-@RequestMapping("")
+@RequestMapping
 public class AdminController {
     @Autowired
     private AdminService adminService;
-    @RequestMapping("index")
-    public ModelAndView index(){
-        ModelAndView mv=new ModelAndView("/index");
-        return mv;
-    }
-
-    @RequestMapping("welcome")
-    public ModelAndView welcome(){
-        ModelAndView mv=new ModelAndView("/welcome");
-        return mv;
-    }
-
-    @RequestMapping("admin-add")
-    public ModelAndView adminadd(){
-        ModelAndView mv=new ModelAndView("/admin-add");
-        return mv;
-    }
-
-    @RequestMapping("admin-list")
-    public ModelAndView adminlist(){
-        ModelAndView mv=new ModelAndView("/admin-list");
-        return mv;
-    }
-
-
-    @RequestMapping("error")
-    public ModelAndView error(){
-        ModelAndView mv=new ModelAndView("/error");
-        return mv;
-    }
-
-    @RequestMapping("login")
-    public ModelAndView login(){
-        ModelAndView mv=new ModelAndView("/login");
-        return mv;
-    }
 
     @RequestMapping(value="/login_Action",method= RequestMethod.POST)
     @ResponseBody
@@ -72,47 +36,50 @@ public class AdminController {
         }
     }
 
-    @RequestMapping("member-list1")
-    public ModelAndView memberlist1(){
-        ModelAndView mv=new ModelAndView("/member-list1");
-        return mv;
+    @RequestMapping(value = "/admin-list",method = RequestMethod.GET)
+    public ModelAndView adminShow(){
+        List<Admin> admins=adminService.showAdmin();
+        ModelAndView view=new ModelAndView("admin-list");
+        view.addObject("admins",admins);
+        return view;
     }
 
-    @RequestMapping("vote-add")
-    public ModelAndView voteadd(){
-        ModelAndView mv=new ModelAndView("vote-add");
-        return mv;
+    @RequestMapping("deleteAdmin")
+    public ModelAndView deleteAdmin(Admin admin) {
+        adminService.deleteAdmin(admin.getId());
+        ModelAndView mav = new ModelAndView("redirect:/admin-list");
+        return mav;
     }
 
-    @RequestMapping("vote-list")
-    public ModelAndView votelist(){
-        ModelAndView mv=new ModelAndView("vote-list");
-        return mv;
+    @RequestMapping("add")
+    public ModelAndView add(Admin admin){
+        adminService.add(admin);
+        ModelAndView mav = new ModelAndView("redirect:/admin-list");
+        return mav;
     }
 
-
-    @RequestMapping("welcome1")
-    public ModelAndView welcome1(){
-        ModelAndView mv=new ModelAndView("/welcome1");
-        return mv;
+    @RequestMapping("upDate")
+    public ModelAndView upDate(Admin admin) {
+        adminService.upDate(admin);
+        ModelAndView mav = new ModelAndView("redirect:/admin-list");
+        return mav;
     }
 
-    @RequestMapping("echarts4")
-    public ModelAndView echarts4(){
-        ModelAndView mv=new ModelAndView("/echarts4");
-        return mv;
+    @RequestMapping("souSou")
+    public ModelAndView souSou(String username){
+        System.out.println(username);
+        List<Admin> admins1=adminService.souSou(username);
+        ModelAndView view=new ModelAndView("admin-list");
+        view.addObject("admins",admins1);
+        return view;
     }
 
-    @RequestMapping("singer-add")
-    public ModelAndView singeradd(){
-        ModelAndView mv=new ModelAndView("/singer-add");
-        return mv;
-    }
-
-    @RequestMapping("duel-add")
-    public ModelAndView duel_add(){
-        ModelAndView mv=new ModelAndView("/duel-add");
-        return mv;
+    @RequestMapping("selectAdmin")
+    public ModelAndView selectAdmin(int id){
+        Admin admin=   adminService.selectAdmin(id);
+        ModelAndView view=new ModelAndView("admin-update");
+        view.addObject("adminss",admin);
+        return view;
     }
 
 }

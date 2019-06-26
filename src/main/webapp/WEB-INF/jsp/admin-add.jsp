@@ -28,7 +28,7 @@
 <body>
 <div class="layui-fluid">
     <div class="layui-row">
-        <form class="layui-form">
+        <form class="layui-form" action="${pageContext.request.contextPath}/add" >
             <div class="layui-form-item">
                 <label for="username" class="layui-form-label">
                     <span class="x-red">*</span>登录名
@@ -47,7 +47,7 @@
                     <span class="x-red">*</span>密码
                 </label>
                 <div class="layui-input-inline">
-                    <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
+                    <input type="password" id="L_pass" name="password" required="" lay-verify="pass"
                            autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">
@@ -69,7 +69,7 @@
                     <span class="x-red">*</span>手机
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="phone" name="phone" required="" lay-verify="phone"
+                    <input type="text" id="phone" name="tel" required="" lay-verify="phone"
                            autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">
@@ -80,7 +80,7 @@
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
                 </label>
-                <button  class="layui-btn" lay-filter="add" lay-submit="">
+                <button  class="layui-btn" lay-filter="add" type="submit">
                     增加
                 </button>
             </div>
@@ -108,23 +108,22 @@
             }
         });
 
-        //监听提交
-        form.on('submit(add)',
-            function(data) {
-                console.log(data);
-                //发异步，把数据提交给php
-                layer.alert("增加成功", {
-                        icon: 6
-                    },
-                    function() {
-                        //关闭当前frame
-                        xadmin.close();
-
-                        // 可以对父窗口进行刷新
-                        xadmin.father_reload();
-                    });
-                return false;
-            });
+        // //监听提交
+        // form.on('submit(add)',
+        //     function(data) {
+        //
+        //         layer.alert("增加成功", {
+        //                 icon: 6
+        //             },
+        //             function() {
+        //                 //关闭当前frame
+        //                 xadmin.close();
+        //
+        //                 // 可以对父窗口进行刷新
+        //                 xadmin.father_reload();
+        //             });
+        //         return false;
+        //     });
 
     });</script>
 <script>var _hmt = _hmt || []; (function() {

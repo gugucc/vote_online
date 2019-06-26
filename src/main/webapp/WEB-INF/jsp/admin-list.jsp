@@ -40,7 +40,7 @@
         <div class="layui-col-md12">
             <div class="layui-card">
                 <div class="layui-card-body ">
-                    <form class="layui-form layui-col-space5">
+                    <form class="layui-form layui-col-space5"  action="${pageContext.request.contextPath}/souSou" >
                         <div class="layui-inline layui-show-xs-block">
                             <input class="layui-input"  autocomplete="off" placeholder="开始日" name="start" id="start">
                         </div>
@@ -51,16 +51,17 @@
                             <input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
-                            <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                            <button class="layui-btn"  type="submit" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
                         </div>
                     </form>
                 </div>
                 <div class="layui-card-header">
                     <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-                    <button class="layui-btn" onclick="xadmin.open('添加管理员','./admin-add.html',600,400)"><i class="layui-icon"></i>添加管理员</button>
+                    <button class="layui-btn" ><i class="layui-icon"></i><a  href="admin-add">添加管理员</a></button>
                 </div>
                 <div class="layui-card-body ">
-                    <table class="layui-table layui-form">
+
+                    <table class="layui-table" id="test" lay-filter="test">
                         <thead>
                         <tr>
                             <th>
@@ -69,37 +70,36 @@
                             <th>ID</th>
                             <th>登录名</th>
                             <th>手机</th>
-                            <th>邮箱</th>
                             <th>角色</th>
-                            <th>加入时间</th>
                             <th>状态</th>
                             <th>操作</th>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name=""  lay-skin="primary">
-                            </td>
-                            <td>1</td>
-                            <td>admin</td>
-                            <td>18925139194</td>
-                            <td>113664000@qq.com</td>
-                            <td>超级管理员</td>
-                            <td>2017-01-01 11:11:42</td>
-                            <td class="td-status">
-                                <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
-                            <td class="td-manage">
-                                <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                                    <i class="layui-icon">&#xe601;</i>
-                                </a>
-                                <a title="编辑"  onclick="xadmin.open('编辑','admin-edit.html')" href="javascript:;">
-                                    <i class="layui-icon">&#xe642;</i>
-                                </a>
-                                <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                                    <i class="layui-icon">&#xe640;</i>
-                                </a>
-                            </td>
-                        </tr>
+                        <c:forEach  items="${admins}" var="ad" varStatus="admins">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name=""  lay-skin="primary">
+                                </td>
+                                <td>${ad.id}</td>
+                                <td>${ad.username}</td>
+                                <td>${ad.tel}</td>
+                                <td>管理员</td>
+
+                                <td class="td-status">
+                                    <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
+                                <td class="td-manage">
+                                    <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
+                                        <i class="layui-icon">&#xe601;</i>
+                                    </a>
+                                    <a title="编辑"   href="selectAdmin?id=${ad.id}">
+                                        <i class="layui-icon">&#xe642;</i>
+                                    </a>
+                                    <a title="删除" onclick="member_del(this,'${ad.id}')" href="deleteAdmin?id=${ad.id}">
+                                        <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -107,10 +107,9 @@
                     <div class="page">
                         <div>
                             <a class="prev" href="">&lt;&lt;</a>
-                            <a class="num" href="">1</a>
-                            <span class="current">2</span>
-                            <a class="num" href="">3</a>
-                            <a class="num" href="">489</a>
+
+                            <span class="current">1</span>
+
                             <a class="next" href="">&gt;&gt;</a>
                         </div>
                     </div>
@@ -121,20 +120,20 @@
 </div>
 </body>
 <script>
-    layui.use(['laydate','form'], function(){
-        var laydate = layui.laydate;
-        var form = layui.form;
-
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#start' //指定元素
-        });
-
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#end' //指定元素
-        });
-    });
+    // layui.use(['laydate','form'], function(){
+    //     var laydate = layui.laydate;
+    //     var form = layui.form;
+    //
+    //     //执行一个laydate实例
+    //     laydate.render({
+    //         elem: '#start' //指定元素
+    //     });
+    //
+    //     //执行一个laydate实例
+    //     laydate.render({
+    //         elem: '#end' //指定元素
+    //     });
+    // });
 
     /*用户-停用*/
     function member_stop(obj,id){
@@ -181,6 +180,44 @@
             $(".layui-form-checked").not('.header').parents('tr').remove();
         });
     }
+</script>
+
+<script>
+    layui.use('table',
+        function() {
+            var table = layui.table;
+
+            //监听单元格编辑
+            table.on('edit(test)',
+                function(obj) {
+                    var value = obj.value //得到修改后的值
+                        ,
+                        data = obj.data //得到所在行所有键值
+                        ,
+                        field = obj.field; //得到字段
+                    layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
+                });
+
+            //头工具栏事件
+            table.on('toolbar(test)',
+                function(obj) {
+                    var checkStatus = table.checkStatus(obj.config.id);
+                    switch (obj.event) {
+                        case 'getCheckData':
+                            var data = checkStatus.data;
+                            layer.alert(JSON.stringify(data));
+                            break;
+                        case 'getCheckLength':
+                            var data = checkStatus.data;
+                            layer.msg('选中了：' + data.length + ' 个');
+                            break;
+                        case 'isAll':
+                            layer.msg(checkStatus.isAll ? '全选': '未全选');
+                            break;
+                    };
+                });
+        });
+
 </script>
 <script>var _hmt = _hmt || []; (function() {
     var hm = document.createElement("script");

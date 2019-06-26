@@ -42,8 +42,8 @@
                 <label class="layui-form-label">
                     <span class="x-red"></span>状态</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="status" value="开启" title="开启">
-                    <input type="radio" name="status" value="关闭" title="关闭" checked>
+                    <input type="radio" name="status" value="1" title="开启">
+                    <input type="radio" name="status" value="0" title="关闭" checked>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -72,7 +72,6 @@
                     /*status:$("input:checkbox[name='open']:checked").val(),*/
                     status:$("input:radio[name='status']:checked").val(),
                 },
-
                 //判断注册状态
                 success:function(res){
                     console.log(res);

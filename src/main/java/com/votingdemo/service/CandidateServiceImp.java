@@ -27,5 +27,10 @@ public class CandidateServiceImp implements CandidateService {
         return candidateDao.getCandidate();
     }
 
+    @Override
+    public int delSinger(int c_id) {
+        return candidateDao.delSinger(c_id);
+    }
+
 
 }

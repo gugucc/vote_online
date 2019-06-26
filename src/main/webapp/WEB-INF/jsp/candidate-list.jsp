@@ -23,9 +23,6 @@
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript">
-
-    </script>
 </head>
 
 <body>
@@ -56,7 +53,7 @@
                 </div>
                 <div class="layui-card-body ">
                     <div class = "layui-btn-container" >
-                        <button class="layui-btn" onclick="xadmin.open('添加歌手','./singer-add',800,600)">
+                        <button class="layui-btn" onclick="xadmin.open('添加歌手','./candidate-add',800,600)">
                             <i class="layui-icon"></i>添加歌手</button>
                     </div>
                     <table class="layui-table" id="test" lay-filter="test">
@@ -189,6 +186,15 @@
             //console.log(obj)
             if(obj.event === 'del') {
                 layer.confirm('真的删除行么', function (index) {
+                    if (index) {
+                        $.ajax({
+                            url: 'del?c_id='+data.c_id,
+                            success: function (data) {
+                                layer.alert('删除成功！')
+                                $("#demo").datagrid("reload");
+                            }
+                        })
+                    }
                     obj.del();
                     layer.close(index);
                 });

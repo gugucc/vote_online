@@ -1,17 +1,17 @@
 package com.votingdemo.entity;
 
 public class Candidate {
-    private String c_id;
+    private Integer c_id;
     private String username;
     private String project;
     private String sex;
     private String image;
 
-    public String getC_id() {
+    public Integer getC_id() {
         return c_id;
     }
 
-    public void setC_id(String c_id) {
+    public void setC_id(Integer c_id) {
         this.c_id = c_id;
     }
 

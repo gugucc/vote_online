@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 
 import javax.annotation.Resource;
+import java.util.List;
+
 @Service
 public class DuelServiceImp implements DuelService {
     @Resource
@@ -14,5 +16,15 @@ public class DuelServiceImp implements DuelService {
     @Override
     public int addDuel(Duel duel) {
         return duelDao.addDuel(duel);
+    }
+
+    @Override
+    public List<Duel> getDuel() {
+        return duelDao.getDuel();
+    }
+
+    @Override
+    public int delDuel(int d_id) {
+        return duelDao.delDuel(d_id);
     }
 }

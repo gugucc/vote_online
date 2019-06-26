@@ -17,4 +17,7 @@
     <select id="getCandidate" resultMap="candidate">
         select c_id,username,project,sex from candidate
     </select>
+    <delete id="delSinger" parameterType="int">
+		delete from candidate where c_id=#{c_id}
+	</delete>
 </mapper>

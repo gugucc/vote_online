@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: asus
   Date: 2019/6/21
-  Time: 11:57
+  Time: 11:56
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,174 +11,192 @@
 <html class="x-admin-sm">
 <head>
     <meta charset="UTF-8">
-    <title>欢迎页面-X-admin2.2</title>
+    <title>歌手表</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/xadmin.css">
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/lib/layui/layui.js" charset="utf-8"></script>
+    <script src="${pageContext.request.contextPath}/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/xadmin.js"></script>
-    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
+<div class="x-nav">
+            <span class="layui-breadcrumb">
+                <a href="">首页</a>
+                <a href="">演示</a>
+                <a>
+                    <cite>导航元素</cite></a>
+            </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
+        <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
+    </a>
+</div>
 <div class="layui-fluid">
-    <div class="layui-row">
-        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
-            <legend>上传歌手头像</legend>
-        </fieldset>
-        <form <%--enctype="multipart/form-data"--%> class="layui-form" <%--action="${pageContext.request.contextPath}/upload_submit" method="post"--%>>
-            <div class="layui-upload">
-                <button type="button" class="layui-btn layui-btn-normal" id="chose">选择文件</button>
-                <div class="layui-form-item">
-                    <label for="username" class="layui-form-label">
-                        <span class="x-red">*</span>歌手名</label>
-                    <div class="layui-input-inline">
-                        <input type="text" id="name" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input">
-                    </div>
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body ">
+                    <form class="layui-form layui-col-space5">
+                        <div class="layui-inline layui-show-xs-block">
+                            <input type="text" name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input"></div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                                <i class="layui-icon">&#xe615;</i></button>
+                        </div>
+                    </form>
                 </div>
-                <button type="button" lay-filter="submit" class="layui-btn" id="upload">开始上传</button>
-            </div>
-        </form>
-        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
-            <legend>添加基本信息</legend>
-        </fieldset>
-        <form class="layui-form">
-            <div class="layui-form-item">
-                <label for="username" class="layui-form-label">
-                    <span class="x-red">*</span>歌手名</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
-            </div>
-            <div class="layui-form-item">
-                <label for="songName" class="layui-form-label">
-                    <span class="x-red">*</span>歌名</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="songName" name="songName" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">
-                    <span class="x-red">*</span>性别</label>
-                <div class="layui-input-block">
-                    <input type="radio" name="sex" value="男" title="男">
-                    <input type="radio" name="sex" value="女" title="女" checked>
+                <div class="layui-card-body ">
+                    <table class="layui-table" id="test" lay-filter="test">
+                        <thead>
+                        <tr>
+
+                        </tr>
+                        </thead>
+                    </table>
                 </div>
             </div>
-
-
-            <div class="layui-form-item">
-                <label class="layui-form-label"></label>
-                <button class="layui-btn" lay-filter="add" lay-submit="">增加</button></div>
-        </form>
+        </div>
     </div>
 </div>
-<%--<script type="text/javascript">
-    layui.use(['form', 'layer'],
+</body>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="add">添加</a>
+</script>
+<script>
+    layui.use('laydate',
         function() {
-            $ = layui.jquery;
-            var form = layui.form,
-                layer = layui.layer;
+            var laydate = layui.laydate;
 
-            //添加表单监听事件
-            form.on('submit(submit)',function () {
-                $.ajax({
-                    url:'upload_submit',
-                    type:'post',
-                    data:{username:$('#name').val(),
-                    },
-                    dataType:'text',
-                    //判断注册状态
-                    success:function (data) {
-                        if (data.flag==1){
-                            layer.msg('添加失败')
-                        }else{
-                            layer.msg('添加成功')
-                        }
-                    }
-                })
-                //防止页面跳转
-                return false;
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#start' //指定元素
             });
 
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#end' //指定元素
+            });
 
-        });
-</script>--%>
+        });</script>
 <script>
-    layui.use('upload', function() {
-        var $ = layui.jquery,
-            upload = layui.upload;
+    layui.use('table',
+        function() {
+            var table = layui.table;
 
-        //选完文件后不自动上传
-        upload.render({
-            elem: '#chose',
-            url: 'upload_submit',
-            auto: false,
-            multiple: true,
-            bindAction: '#upload',
-            before:function(obj){
-                this.data={username:$('#name').val()}
+            //监听单元格编辑
+            table.on('edit(test)',
+                function(obj) {
+                    var value = obj.value //得到修改后的值
+                        ,
+                        data = obj.data //得到所在行所有键值
+                        ,
+                        field = obj.field; //得到字段
+                    layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
+                });
+
+            //头工具栏事件
+            table.on('toolbar(test)',
+                function(obj) {
+                    var checkStatus = table.checkStatus(obj.config.id);
+                    switch (obj.event) {
+                        case 'getCheckData':
+                            var data = checkStatus.data;
+                            layer.alert(JSON.stringify(data));
+                            break;
+                        case 'getCheckLength':
+                            var data = checkStatus.data;
+                            layer.msg('选中了：' + data.length + ' 个');
+                            break;
+                        case 'isAll':
+                            layer.msg(checkStatus.isAll ? '全选': '未全选');
+                            break;
+                    };
+                });
+        });
+
+
+
+</script>
+
+<script type="text/javascript">
+
+    layui.use('table', function() {
+        var table = layui.table;
+
+        table.render({
+            elem: '#test',
+            url: 'find_Candidate',
+            title: '用户数据表',
+            cols:  [[
+                {
+                    field: 'c_id',
+                    width: 100,
+                    title: 'ID',
+                    sort: true,
+                    edit: 'text'
+                },
+                {
+                    field: 'username',
+                    width: 250,
+                    title: '用户名',
+                    edit: 'text'
+                },
+                {
+                    field: 'sex',
+                    width: 100,
+                    title: '性别',
+                    sort: true,
+                    edit: 'text'
+                },
+                {
+                    field: 'project',
+                    width: 250,
+                    title: '作品',
+                    edit: 'text'
+                },
+                {fixed: 'right', title:'操作', toolbar: '#barDemo', width:250}
+            ]
+            ],
+            page: true,
+            response: {
+                statusName:'code', //规定返回的状态码字段为code
             },
-            done: function(res){
-                if(res.code==200){
-                    layer.msg('上传成功！');
-                }
-                else{
-                    layer.msg("上传失败！");
+            parseData: function(res) { //将原始数据解析成 table 组件所规定的数据
+                return {
+                    "code": res.code, //解析接口状态
+                    "msg": res.msg, //解析提示文本
+                    "data": res.data //解析数据列表
+                };
+            }
+        });
 
-                }
+        //监听行工具事件
+        table.on('tool(test)', function(obj){
+            var data = obj.data;
+            //console.log(obj)
+            if(obj.event === 'add') {
+                layer.confirm('确定添加歌手', function (index) {
+                    if (index) {
+                        $.ajax({
+                            url: 'addDetails',
+                            data: {c_id:data.c_id,d_id:${d_id}},
+                            success: function (data) {
+                                layer.alert('添加成功！')
+                                $("#demo").datagrid("reload");
+                            }
+                        })
+                    }
+                    obj.del();
+                    layer.close(index);
+                });
             }
         });
     });
 </script>
-
-<script>
-    layui.use(['form', 'layer'],
-        function() {
-            $ = layui.jquery;
-            var form = layui.form,
-                layer = layui.layer;
-
-            //添加表单监听事件
-            form.on('submit(add)',function () {
-                $.ajax({
-                    url:'add_submit',
-                    type:'post',
-                    data:{username:$('#username').val(),
-                        project:$('#songName').val(),
-                        sex:$("input:radio[name='sex']:checked").val(),
-                    },
-                    dataType:'text',
-                    //判断注册状态
-                    success:function (data) {
-                        if (data.flag==1){
-                            layer.msg('添加失败')
-                        }else{
-                            layer.msg('添加成功')
-                        }
-                    }
-                })
-                //防止页面跳转
-                return false;
-            });
-
-
-        });
-</script>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-</body>
 </html>

@@ -2,7 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.votingdemo.dao.DuelDao">
+    <resultMap id="duel" type="com.votingdemo.entity.Duel">
+        <id property="d_id" column="d_id"/>
+        <result property="title" column="title"/>
+        <result property="startime" column="startime"/>
+        <result property="status" column="status"/>
+    </resultMap>
     <insert id="addDuel" parameterType="com.votingdemo.entity.Duel">
         insert into duel(title,status) value (#{title},#{status})
     </insert>
+    <select id="getDuel" resultMap="duel">
+        select d_id,title,startime,status from duel
+    </select>
+    <delete id="delDuel" parameterType="int">
+		delete from duel where d_id=#{d_id}
+	</delete>
 </mapper>

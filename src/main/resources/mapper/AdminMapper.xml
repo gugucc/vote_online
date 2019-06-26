@@ -5,4 +5,22 @@
     <select id="findadmin" resultType="com.votingdemo.entity.Admin">
         select * from admin where username=#{username} and password=#{password}
     </select>
+    <insert id="add" parameterType="com.votingdemo.entity.Admin">
+        insert into admin(id,username,password,tel) values(null,#{username},#{password},#{tel})
+    </insert>
+    <select id="showAdmin" resultType="com.votingdemo.entity.Admin">
+        select * from admin
+    </select>
+    <delete id="deleteAdmin" parameterType="com.votingdemo.entity.Admin">
+          delete from admin where id=#{id}
+    </delete>
+    <select id="selectAdmin" resultType="com.votingdemo.entity.Admin">
+        select * from admin where id=#{id}
+    </select>
+    <update id="upDate" parameterType="com.votingdemo.entity.Admin">
+        update admin set username=#{username},password=#{password},tel=#{tel} where id=#{id}
+    </update>
+    <select id="souSou"  resultType="com.votingdemo.entity.Admin" parameterType="String">
+     select * from admin where username like   CONCAT(CONCAT('%',#{username},'%'))
+    </select>
 </mapper>

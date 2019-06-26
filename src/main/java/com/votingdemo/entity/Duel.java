@@ -3,16 +3,16 @@ package com.votingdemo.entity;
 import java.sql.Timestamp;
 
 public class Duel {
-    private int d_id;
+    private Integer d_id;
     private String title;
-    private Timestamp time;
-    private String status;
+    private Timestamp startime;
+    private int status;
 
-    public int getD_id() {
+    public Integer getD_id() {
         return d_id;
     }
 
-    public void setD_id(int d_id) {
+    public void setD_id(Integer d_id) {
         this.d_id = d_id;
     }
 
@@ -24,19 +24,19 @@ public class Duel {
         this.title = title;
     }
 
-    public Timestamp getTime() {
-        return time;
+    public Timestamp getStartime() {
+        return startime;
     }
 
-    public void setTime(Timestamp time) {
-        this.time = time;
+    public void setStartime(Timestamp startime) {
+        this.startime = startime;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 }

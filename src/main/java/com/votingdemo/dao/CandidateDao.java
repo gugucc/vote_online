@@ -12,4 +12,6 @@ public interface CandidateDao {
     void uploadImages(Candidate candidate);
     //找到候选人
     List<Candidate> getCandidate();
+
+    int delSinger(int c_id);
 }

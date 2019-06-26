@@ -92,7 +92,7 @@
                 <ul class="sub-menu">
 
                     <li>
-                        <a onclick="xadmin.add_tab('参赛歌手列表(动态表格)','member-list1',true)">
+                        <a onclick="xadmin.add_tab('参赛歌手列表','candidate-list',true)">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>参赛歌手列表(动态表格)</cite></a>
                     </li>
@@ -106,7 +106,7 @@
                     <i class="iconfont nav_right">&#xe697;</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a onclick="xadmin.add_tab('投票列表','vote-list.html')">
+                        <a onclick="xadmin.add_tab('投票列表','duel-list')">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>投票列表</cite></a>
                     </li>

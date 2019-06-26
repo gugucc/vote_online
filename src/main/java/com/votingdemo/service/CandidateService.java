@@ -12,4 +12,6 @@ public interface CandidateService {
 
     //找到候选人
     List<Candidate> getCandidate();
+    //删除候选人
+    int delSinger(int c_id);
 }
