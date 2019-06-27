@@ -76,14 +76,11 @@ public class VoteController {
         return view;
     }
 
-    @RequestMapping(value="/updateVote",method= RequestMethod.GET)
+    @RequestMapping("/updateVote")
     @ResponseBody
-    public int updateVote(int d_id,Model model){
-        int i = voteService.updateVote(d_id);
-        model.addAttribute("d_id",d_id);
-        System.out.println("======"+i);
-        System.out.println("======"+d_id);
-        return i;
+    public void updateVote(int d_id,int c_id){
+       voteService.updateVote(d_id,c_id);
+
     }
 
 }

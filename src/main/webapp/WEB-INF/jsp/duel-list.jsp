@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/xadmin.css">
     <script src="${pageContext.request.contextPath}/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/xadmin.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
@@ -78,16 +79,13 @@
                                 <td>${duel.startime}</td>
                                 <td class="td-status">
                                     <c:if test="${duel.status==1}">
-                                        <input type='checkbox' value="${duel.status}" id='status' lay-filter='stat' checked='checked' name='status'  lay-skin='switch' lay-text='开启|关闭' >
+                                        <input type='checkbox' onclick="updateStatus(${duel.d_id},${duel.status})"  id='status' lay-filter='stat' checked='checked' name='status' >
                                     </c:if>
                                     <c:if test="${duel.status==0}">
-                                        <input type='checkbox' value="${duel.status}" id='status' lay-filter='stat' name='status'  lay-skin='switch' lay-text='开启|关闭' >
+                                        <input type='checkbox' onclick="updateStatus(${duel.d_id},${duel.status})"  id='status' lay-filter='stat' name='status' >
                                     </c:if>
                                 </td>
                                 <td class="td-manage">
-                                    <a onclick="duel_stop(this,'10001')" href="javascript:;"  title="启用">
-                                        <i class="layui-icon">&#xe601;</i>
-                                    </a>
                                     <a class="layui-btn layui-btn layui-btn-xs" title="查看详情" onclick="xadmin.open('查看详情','show-singer?d_id=${duel.d_id}')">
                                         <i class="layui-icon">&#xe601;</i>
                                     </a>
@@ -114,7 +112,35 @@
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>--%>
 
-<script>
+<script type="text/javascript">
+    //setTimeout(hello,1000);
+    updateStatus=function(d_id,status){
+    if (status==1){
+    status=0;
+    console.log("+++++++"+status)
+    $.ajax({
+        url:"duelStatus",
+        data:{"d_id":d_id,"status":status}
+        ,success:function (e) {
+            console.log("changg")
+        }
+    })
+    } else if (status==0){
+    status=1;
+    console.log("+++++++"+status)
+    $.ajax({
+        url:"duelStatus",
+        data:{"d_id":d_id,"status":status}
+        ,success:function (e) {
+            console.log("changg")
+        }
+    })
+}
+        /*var status=$( "input checkbox:checked" ).val();*/
+       }
+
+setInterval("updateStatus()",1000)
+
 
     layui.use('table', function(){
         var table = layui.table;

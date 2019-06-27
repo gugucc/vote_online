@@ -5,6 +5,8 @@
     <resultMap id="duel" type="com.votingdemo.entity.Duel">
         <id property="d_id" column="d_id"/>
         <result property="title" column="title"/>
+        <result property="startime" column="startime"/>
+        <result property="status" column="status"/>
     </resultMap>
     <resultMap id="candidate" type="com.votingdemo.entity.Candidate">
         <id property="c_id" column="c_id"/>
@@ -20,7 +22,7 @@
         select d_id from duel
     </select>
     <select id="getDuelId" resultMap="duel">
-        select d_id,title from duel
+        select * from duel
     </select>
     <select id="getCid" resultType="String">
         select c_id FROM details WHERE d_id=#{d_id}

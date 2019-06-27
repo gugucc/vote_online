@@ -62,7 +62,9 @@
         <div id="div4" class="fluid bounceIn animated" style="z-index:999;animation-delay:4s;-webkit-animation-delay:4s;-moz-animation-delay:4s;margin-top: 2em;z-index:10;">
             <select class="form-control" style="width: 178px;height: 44.4px;margin: 0 auto;">
                 <c:forEach items="${Duel}" var="duel">
-                    <option value='${duel.d_id}'>${duel.title}</option>
+                    <c:if test="${duel.status==1}">
+                        <option value='${duel.d_id}'>${duel.title}</option>
+                    </c:if>
                 </c:forEach>
             </select>
         </div>
@@ -74,7 +76,6 @@
     </div>
 
 <script src="${pageContext.request.contextPath}/js/respond.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="${pageContext.request.contextPath}/js/respond.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="${pageContext.request.contextPath}/js/sweet-alert.min.js" type="text/javascript" charset="utf-8"></script>
 <script>

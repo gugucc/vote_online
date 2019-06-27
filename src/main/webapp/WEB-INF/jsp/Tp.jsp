@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: asus
@@ -7,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
 <!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
@@ -41,13 +41,6 @@
     </div>
 </div>
 <div class="clearfix"></div>
-<div class="gridContainer clearfix">
-    <div id="search" class="fluid bounceIn animated">
-        <form action="">
-            <input type="text" placeholder="输入您想投票的姓名或编号" class="search_text"><button type="submit" class="search">搜索</button>
-        </form>
-    </div>
-</div>
 <c:forEach items="${Candidate}" var="candidate">
 <div id="content_list" class="gridContainer clearfix bounceInDown animated">
     <div class="content_list_li">
@@ -59,8 +52,8 @@
             <div class="content_list_li_right_li"><strong>姓名：</strong>${candidate.username}</div>
             <div class="content_list_li_right_li"><strong>作品：</strong>${candidate.project}</div>
             <div class="content_list_li_right_li_a">
-                <a id="tp1" class="btn to t1" onClick="updateVote1(${candidate.c_id})">投我吧</a>
-                <a href="show-singer" id="tp2" class="btn to on"  style="display: none;">查看票数</a>
+                <a name="tp1" id="tp1" class="btn to t1" onClick="updateVote1(${candidate.c_id})">投我吧</a>
+                <a href="show-singer?d_id=${d_id}" name="tp2" id="tp2" class="btn to on"  style="display: none;">查看票数</a>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -73,13 +66,42 @@
 <script type="text/javascript">
     $(function () {
         updateVote1=function (c_id) {
-            $.ajax({
-                url:"updateVote",
-                data:{"c_id":c_id,"d_id":${d_id}},
-                success:function (data) {
-                    console.log("成功")
-                }
-            })
+               <%
+               String sIP=request.getLocalAddr();
+               %>
+                   $.ajax({
+                       url:"selectIP?sIP="+"<%=sIP%>",
+                       success:function (i) {
+                           if (i==1){
+                               alert("已经投过票不能投票了！")
+                               $("a[name=tp1]").css({"display":"none"}),
+                                   $("a[name=tp2]").css({"display":"block"})
+                           }else{
+                               $.ajax({
+                                   url:"updateVote",
+                                   data:{"c_id":c_id,"d_id":${d_id}},
+                                   success:function (data) {
+                                       alert("投票成功")
+                                       $.ajax({
+                                           url: "getIP",
+                                           type:"POST",
+                                           success:function (e) {
+                                               $("a[name=tp1]").css({"display":"none"}),
+                                               $("a[name=tp2]").css({"display":"block"})
+                                               /*$.ajax({
+                                                   url:"",
+                                                   type:"post",
+                                                   success:function (a) {
+
+                                                   }
+                                               })*/
+                                           }
+                                       })
+                                   }
+                               })
+                           }
+                       }
+           })
         }
     })
 </script>

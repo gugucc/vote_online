@@ -77,4 +77,13 @@ public class DuelController {
         return title;
     }
 
+    @RequestMapping("/duelStatus")
+    @ResponseBody
+    public void duelStatus(int d_id,int status){
+        duelService.updateStatus(d_id,status);
+        /*JSONObject obj=new JSONObject();
+        obj.put("data",details);*/
+        System.out.println("======"+d_id);
+    }
+
 }

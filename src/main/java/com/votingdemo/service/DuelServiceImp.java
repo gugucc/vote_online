@@ -32,4 +32,9 @@ public class DuelServiceImp implements DuelService {
     public String getTitle(int d_id) {
         return duelDao.getTitle(d_id);
     }
+
+    @Override
+    public void updateStatus(int d_id,int status) {
+        duelDao.updateStatus(d_id,status);
+    }
 }

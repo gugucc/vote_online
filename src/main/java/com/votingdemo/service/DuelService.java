@@ -12,4 +12,6 @@ public interface DuelService {
     int delDuel(int d_id);
 
     String getTitle(int d_id);
+
+    void updateStatus(int d_id,int status);
 }

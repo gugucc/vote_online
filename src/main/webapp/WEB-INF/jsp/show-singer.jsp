@@ -31,8 +31,7 @@
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <div id="main" style="width: 100%;height:600px;"></div>
 <script type="text/javascript">
-
-    $.ajax({
+    setInterval(function(){ $.ajax({
         url:"singer-name?d_id=${d_id}",
         success: function(data) {
             $.ajax({
@@ -207,8 +206,9 @@
                     })
                 }
             })
-    }
+        }
     })
+    }, 1000);
 
 
 </script>

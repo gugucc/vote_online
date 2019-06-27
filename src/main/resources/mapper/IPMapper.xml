@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.votingdemo.dao.IPDao">
+    <insert id="getIP" parameterType="com.votingdemo.entity.Address">
+        insert into address(id,ip,vote_time) value (#{id},#{ip},#{vote_time})
+    </insert>
+    <select id="selectIP" resultType="int">
+        select count(*) from address WHERE ip=#{ip}
+    </select>
+</mapper>

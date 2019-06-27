@@ -6,7 +6,7 @@ public class Duel {
     private Integer d_id;
     private String title;
     private Timestamp startime;
-    private int status;
+    private Integer status;
 
     @Override
     public String toString() {
@@ -42,11 +42,15 @@ public class Duel {
         this.startime = startime;
     }
 
-    public int getStatus() {
+    public void setD_id(Integer d_id) {
+        this.d_id = d_id;
+    }
+
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 }

@@ -34,8 +34,8 @@ public class VoteServiceImp implements VoteService{
     }
 
     @Override
-    public int updateVote(int d_id) {
-        return voteDao.updateVote(d_id);
+    public void updateVote(int d_id,int c_id) {
+         voteDao.updateVote(d_id,c_id);
     }
 
 

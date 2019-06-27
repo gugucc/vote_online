@@ -20,4 +20,7 @@
     <select id="getTitle" resultType="String">
         select title FROM duel WHERE d_id = #{d_id}
     </select>
+    <update id="updateStatus">
+        UPDATE duel SET status = #{status} where d_id=#{d_id}
+    </update>
 </mapper>

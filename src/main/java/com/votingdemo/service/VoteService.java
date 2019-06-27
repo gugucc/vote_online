@@ -14,5 +14,5 @@ public interface VoteService {
 
     List<Candidate> getVoteSinger(int d_id);
 
-    int updateVote(int d_id);
+    void updateVote(int d_id,int c_id);
 }

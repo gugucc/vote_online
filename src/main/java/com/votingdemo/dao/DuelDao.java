@@ -2,6 +2,7 @@ package com.votingdemo.dao;
 
 import com.votingdemo.entity.Candidate;
 import com.votingdemo.entity.Duel;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,4 +14,6 @@ public interface DuelDao {
     int delDuel(int d_id);
 
     String getTitle(int d_id);
+
+    void updateStatus(@Param(value="d_id")int  d_id,@Param(value="status")int  status);
 }
