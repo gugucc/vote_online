@@ -68,7 +68,7 @@
                             <th>操作</th>
                         </thead>
                         <tbody>
-                        <c:forEach  items="${Duel}" var="duel" varStatus="admins">
+                        <c:forEach  items="${Duel}" var="duel" varStatus="">
                             <tr>
                                 <td>
                                     <input type="checkbox" name=""  lay-skin="primary">
@@ -88,9 +88,9 @@
                                     <a onclick="duel_stop(this,'10001')" href="javascript:;"  title="启用">
                                         <i class="layui-icon">&#xe601;</i>
                                     </a>
-                                <a class="layui-btn layui-btn layui-btn-xs" title="查看详情"  href="">
-                                    <i class="layui-icon">&#xe601;</i>
-                                </a>
+                                    <a class="layui-btn layui-btn layui-btn-xs" title="查看详情" onclick="xadmin.open('查看详情','show-singer?d_id=${duel.d_id}')">
+                                        <i class="layui-icon">&#xe601;</i>
+                                    </a>
                                     <a class="layui-btn layui-btn-warm layui-btn-xs" title="添加对决歌手" onclick="xadmin.open('添加对决歌手','singer-add?d_id=${duel.d_id}')"   <%--href="singer-add?id=${duel.d_id}"--%>>
                                         <i class="layui-icon">&#xe642;</i>
                                     </a>

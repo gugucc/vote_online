@@ -12,4 +12,5 @@ public interface DuelDao {
     //删除对决
     int delDuel(int d_id);
 
+    String getTitle(int d_id);
 }

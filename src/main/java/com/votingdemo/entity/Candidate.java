@@ -7,6 +7,17 @@ public class Candidate {
     private String sex;
     private String image;
 
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "c_id=" + c_id +
+                ", username='" + username + '\'' +
+                ", project='" + project + '\'' +
+                ", sex='" + sex + '\'' +
+                ", image='" + image + '\'' +
+                '}';
+    }
+
     public Integer getC_id() {
         return c_id;
     }

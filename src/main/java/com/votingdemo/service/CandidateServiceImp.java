@@ -13,8 +13,8 @@ public class CandidateServiceImp implements CandidateService {
     private CandidateDao candidateDao;
 
     @Override
-    public void addCandidate(Candidate candidate) {
-        candidateDao.addCandidate(candidate);
+    public int addCandidate(Candidate candidate) {
+        return candidateDao.addCandidate(candidate);
     }
 
     @Override

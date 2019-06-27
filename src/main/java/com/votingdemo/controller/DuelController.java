@@ -65,4 +65,16 @@ public class DuelController {
         System.out.println("======"+d_id);
         return i;
     }
+
+    @RequestMapping(value="singer-duel",produces = "text/plain;charset=UTF-8")
+    @ResponseBody
+    public String singerduel(int d_id){
+        String title=duelService.getTitle(d_id);
+        /*JSONObject obj=new JSONObject();
+        obj.put("data",details);*/
+        System.out.println("======"+d_id);
+        System.out.println("======"+title);
+        return title;
+    }
+
 }

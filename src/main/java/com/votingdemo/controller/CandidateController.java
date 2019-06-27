@@ -2,7 +2,6 @@ package com.votingdemo.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.votingdemo.entity.Candidate;
-import com.votingdemo.entity.ResultMsg;
 import com.votingdemo.service.CandidateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,10 +21,10 @@ public class CandidateController {
 
     @RequestMapping(value="/add_submit",method= RequestMethod.POST)
     @ResponseBody
-    public ResultMsg register(Model model, Candidate candidate){
+    public int register(Model model, Candidate candidate){
         // 添加用户
-        candidateService.addCandidate(candidate);
-        return new ResultMsg(1,"新增成功");
+        return candidateService.addCandidate(candidate);
+
     }
 
     @RequestMapping(value="/find_Candidate",method= RequestMethod.GET)
@@ -49,7 +48,7 @@ public class CandidateController {
     @RequestMapping("/del")
     @ResponseBody
     public int del(int c_id){
-        //删除雇员
+        //删除候选歌手
         int i=candidateService.delSinger(c_id);
         System.out.println("======"+c_id);
         return i;

@@ -2,7 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.votingdemo.dao.DetailsDao">
+    <resultMap id="details" type="com.votingdemo.entity.Details">
+        <id property="id" column="id"/>
+        <result property="d_id" column="d_id"/>
+        <result property="c_id" column="c_id"/>
+        <result property="vote" column="vote"/>
+        <association property="cand" javaType="com.votingdemo.entity.Candidate">
+            <id property="c_id" column="c_id"/>
+            <result property="username" column="username"/>
+            <!--<result property="project" column="project"/>
+            <result property="sex" column="sex"/>-->
+        </association>
+    </resultMap>
     <insert id="addDetails" parameterType="com.votingdemo.entity.Details">
         insert into details(d_id,c_id) value (#{d_id},#{c_id})
     </insert>
+    <select id="getDetails" resultType="String">
+        select username FROM candidate c INNER JOIN details d WHERE d_id=#{d_id} AND d.c_id = c.c_id
+    </select>
+    <select id="getVote" resultType="String">
+        select vote FROM candidate c INNER JOIN details d WHERE d_id=#{d_id} AND d.c_id = c.c_id
+    </select>
+
 </mapper>

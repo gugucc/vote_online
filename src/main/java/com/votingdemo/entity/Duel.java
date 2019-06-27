@@ -8,11 +8,11 @@ public class Duel {
     private Timestamp startime;
     private int status;
 
-    public Integer getD_id() {
+    public int getD_id() {
         return d_id;
     }
 
-    public void setD_id(Integer d_id) {
+    public void setD_id(int d_id) {
         this.d_id = d_id;
     }
 

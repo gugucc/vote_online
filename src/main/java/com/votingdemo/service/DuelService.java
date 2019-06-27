@@ -10,4 +10,6 @@ public interface DuelService {
     List<Duel> getDuel();
 
     int delDuel(int d_id);
+
+    String getTitle(int d_id);
 }

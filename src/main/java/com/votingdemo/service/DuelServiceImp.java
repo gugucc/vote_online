@@ -27,4 +27,9 @@ public class DuelServiceImp implements DuelService {
     public int delDuel(int d_id) {
         return duelDao.delDuel(d_id);
     }
+
+    @Override
+    public String getTitle(int d_id) {
+        return duelDao.getTitle(d_id);
+    }
 }

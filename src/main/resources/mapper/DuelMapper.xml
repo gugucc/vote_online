@@ -17,4 +17,7 @@
     <delete id="delDuel" parameterType="int">
 		delete from duel where d_id=#{d_id}
 	</delete>
+    <select id="getTitle" resultType="String">
+        select title FROM duel WHERE d_id = #{d_id}
+    </select>
 </mapper>
