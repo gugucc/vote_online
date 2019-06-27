@@ -24,4 +24,5 @@
         select vote FROM candidate c INNER JOIN details d WHERE d_id=#{d_id} AND d.c_id = c.c_id
     </select>
 
+
 </mapper>

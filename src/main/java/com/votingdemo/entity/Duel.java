@@ -8,6 +8,16 @@ public class Duel {
     private Timestamp startime;
     private int status;
 
+    @Override
+    public String toString() {
+        return "Duel{" +
+                "d_id=" + d_id +
+                ", title='" + title + '\'' +
+                ", startime=" + startime +
+                ", status=" + status +
+                '}';
+    }
+
     public int getD_id() {
         return d_id;
     }

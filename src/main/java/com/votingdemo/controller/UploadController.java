@@ -37,9 +37,9 @@ public class UploadController {
         String savepath = filepath+"/upload/"+filename;
         System.out.println("轮播图保存路径:"+savepath);
         /*System.out.println(username);*/
-
+        String xdpath = "/upload/"+filename;
         //保存到数据库
-        candidate.setImage(savepath);
+        candidate.setImage(xdpath);
         candidateService.uploadImages(candidate);
 
         Map map = new HashMap<String,Object>();

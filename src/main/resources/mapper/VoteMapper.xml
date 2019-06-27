@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.votingdemo.dao.VoteDao">
+    <resultMap id="duel" type="com.votingdemo.entity.Duel">
+        <id property="d_id" column="d_id"/>
+        <result property="title" column="title"/>
+    </resultMap>
+    <resultMap id="candidate" type="com.votingdemo.entity.Candidate">
+        <id property="c_id" column="c_id"/>
+        <result property="username" column="username"/>
+        <result property="project" column="project"/>
+        <result property="sex" column="sex"/>
+        <result property="image" column="image"/>
+    </resultMap>
+    <select id="showDuel" resultType="String">
+        SELECT title FROM duel
+    </select>
+    <select id="showDuelId1" resultType="String">
+        select d_id from duel
+    </select>
+    <select id="getDuelId" resultMap="duel">
+        select d_id,title from duel
+    </select>
+    <select id="getCid" resultType="String">
+        select c_id FROM details WHERE d_id=#{d_id}
+    </select>
+    <select id="getVoteSinger" resultMap="candidate">
+        SELECT c.c_id,c.username,c.project,c.image FROM candidate c INNER JOIN details d WHERE c.c_id=d.c_id AND d_id=#{d_id}
+    </select>
+    <update id="updateVote">
+        update details set vote=vote+1 where c_id=#{c_id} AND d_id=#{d_id}
+    </update>
+</mapper>

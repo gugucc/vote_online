@@ -29,7 +29,7 @@
 
 <body>
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-<div id="main" style="width: 1000px;height:500px;"></div>
+<div id="main" style="width: 100%;height:600px;"></div>
 <script type="text/javascript">
 
     $.ajax({
@@ -46,6 +46,8 @@
                             // 填入数据
                             // 基于准备好的dom，初始化echarts实例
                             var myChart = echarts.init(document.getElementById('main'));
+
+                            window.onresize = myChart.resize;
 
                             var colorArray = [{
                                 top: '#ffa800', //黄
